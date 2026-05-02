@@ -1,0 +1,43 @@
+use strategy_api::{Bar, DrawCtx, Signal, Strategy, BUY, HOLD, SELL, export_strategy};
+
+pub struct {{strategy_name}} {
+    // add your state fields here
+}
+
+impl Strategy for {{strategy_name}} {
+    fn new() -> Self {
+        Self {
+            // initialize state
+        }
+    }
+
+    fn name() -> &'static str {
+        "{{display_name}}"
+    }
+
+    fn description() -> &'static str {
+        "{{description}}"
+    }
+
+    fn version() -> &'static str {
+        "{{version}}"
+    }
+
+    fn init(&mut self, _total_bars: usize) {
+        // reset state before each backtest run
+    }
+
+    fn on_bar(&mut self, bar: &Bar, index: usize, ctx: &mut DrawCtx) -> Signal {
+        // implement your strategy logic here
+        // draw signals using ctx:
+        //   ctx.circle(index as f64, bar.close as f64, 4.0, [255, 200, 0, 220]);
+        //   ctx.hline(bar.close as f64, [100, 200, 255, 180], 1.0);
+        HOLD
+    }
+
+    fn on_finish(&mut self, _ctx: &mut DrawCtx) {
+        // optional: draw final annotations after all bars
+    }
+}
+
+export_strategy!({{strategy_name}});

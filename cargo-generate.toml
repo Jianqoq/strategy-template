@@ -1,0 +1,20 @@
+[template]
+cargo_generate_version = ">=0.19.0"
+
+[placeholders.strategy_name]
+type = "string"
+prompt = "Strategy struct name (PascalCase, e.g. MaCrossover)"
+regex = "^[A-Z][A-Za-z0-9]*$"
+
+[placeholders.display_name]
+type = "string"
+prompt = "Display name shown in the UI (e.g. MA Crossover)"
+
+[placeholders.description]
+type = "string"
+prompt = "One-line description"
+
+[placeholders.version]
+type = "string"
+prompt = "Version"
+default = "0.1.0"
