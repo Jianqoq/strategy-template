@@ -23,7 +23,7 @@ impl OnBar for {{strategy_name}} {
         "{{version}}"
     }
 
-    fn init(&mut self, _total_bars: usize) {
+    fn init(&mut self, total_bars: usize) {
         // reset state before each backtest run
     }
 
@@ -33,8 +33,9 @@ impl OnBar for {{strategy_name}} {
         // mark signals:    ctx.mark_buy(bar.close);  ctx.mark_sell(bar.close);
     }
 
-    fn on_finish(&mut self, _ctx: &mut Context) {
+    fn on_finish(&mut self, ctx: &mut Context) -> Vec<u8> {
         // optional: final processing after all bars
+        vec![]
     }
 }
 
