@@ -1,4 +1,4 @@
-use strategy_api::{Bar, Context, OnBar, export_strategy};
+use strategy_api::{Bar, Context, OnBar, StateBlob, export_strategy};
 
 pub struct {{strategy_name}} {
     // add your state fields here
@@ -21,6 +21,9 @@ impl OnBar for {{strategy_name}} {
 
     fn version() -> &'static str {
         "{{version}}"
+    }
+
+    fn restore_state(&mut self, state: StateBlob) {
     }
 
     fn init(&mut self, total_bars: usize) {
