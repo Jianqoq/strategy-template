@@ -1,10 +1,10 @@
-use strategy_api::{Bar, Context, export_strategy};
+use strategy_api::{Bar, Context, OnBar, export_strategy};
 
 pub struct {{strategy_name}} {
     // add your state fields here
 }
 
-impl Strategy for {{strategy_name}} {
+impl OnBar for {{strategy_name}} {
     fn new() -> Self {
         Self {
             // initialize state
