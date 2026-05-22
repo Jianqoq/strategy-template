@@ -1,4 +1,4 @@
-use strategy_api::{Bar, BacktestCtx, Strategy, export_strategy};
+use strategy_api::{Bar, Context, export_strategy};
 
 pub struct {{strategy_name}} {
     // add your state fields here
@@ -27,13 +27,13 @@ impl Strategy for {{strategy_name}} {
         // reset state before each backtest run
     }
 
-    fn on_bar(&mut self, bar: &Bar, index: usize, ctx: &mut BacktestCtx) {
+    fn on_bar(&mut self, bar: &Bar, index: usize, ctx: &mut Context) {
         // implement your strategy logic here
         // submit orders:   ctx.submit_order(Side::Long, OrderKind::Market, qty);
         // mark signals:    ctx.mark_buy(bar.close);  ctx.mark_sell(bar.close);
     }
 
-    fn on_finish(&mut self, _ctx: &mut BacktestCtx) {
+    fn on_finish(&mut self, _ctx: &mut Context) {
         // optional: final processing after all bars
     }
 }
